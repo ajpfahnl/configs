@@ -31,8 +31,8 @@ Host rhel8
     User ajp
     Port 2200
 ```
-## git
-Disable tracking with oh-my-zsh to speed things up:
+## git and oh-my-zsh
+Disable tracking with oh-my-zsh to speed things up. Add `--global` option to apply to all repos.
 ```
 git config --add oh-my-zsh.hide-status 1
 git config --add oh-my-zsh.hide-dirty 1
