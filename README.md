@@ -37,3 +37,67 @@ Disable tracking with oh-my-zsh to speed things up. Add `--global` option to app
 git config --add oh-my-zsh.hide-status 1
 git config --add oh-my-zsh.hide-dirty 1
 ```
+
+## VSCode `settings.json`
+```json
+{
+    "latex-workshop.view.pdf.viewer": "tab",
+    "window.zoomLevel": 0,
+	  "latex-workshop.latex.tools": [
+      {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "--shell-escape",
+          "-pdf",
+          "%DOC%"
+        ]
+      },
+      {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+          "--shell-escape",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "%DOC%"
+        ]
+      },
+      {
+        "name": "bibtex",
+        "command": "bibtex",
+        "args": [
+          "%DOCFILE%"
+        ],
+        "env": {}
+      }
+    ],
+    "workbench.editorAssociations": {
+      "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.activityBar.visible": true,
+    "workbench.colorTheme": "Monokai",
+    "terminal.integrated.inheritEnv": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    },
+    "terminal.integrated.tabs.enabled": true,
+    "python.pythonPath": "/usr/local/bin/python3",
+    "notebook.cellToolbarLocation": {
+      "default": "right",
+      "jupyter-notebook": "left"
+    },
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "omnisharp.path": "latest",
+    "omnisharp.useGlobalMono": "always"
+}
+```
