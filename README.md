@@ -43,7 +43,58 @@ git config --add oh-my-zsh.hide-dirty 1
 {
     "latex-workshop.view.pdf.viewer": "tab",
     "window.zoomLevel": 0,
-	  "latex-workshop.latex.tools": [
+    "latex-workshop.latex.recipes":[
+      {
+        "name": "latexmk 🔃",
+        "tools": [
+          "latexmk"
+        ]
+      },
+      {
+        "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+        "tools": [
+          "pdflatex",
+          "bibtex",
+          "pdflatex",
+          "pdflatex"
+        ]
+      },
+      {
+        "name": "lualatex",
+        "tools": [
+          "lualatex"
+        ]
+      },
+      {
+        "name": "lualatex->biber->lualatex",
+        "tools": [
+          "lualatex",
+          "biber",
+          "lualatex"
+        ]
+      },
+      {
+        "name": "Compile Rnw files",
+        "tools": [
+          "rnw2tex",
+          "latexmk"
+        ]
+      },
+      {
+        "name": "Compile Jnw files",
+        "tools": [
+          "jnw2tex",
+          "latexmk"
+        ]
+      },
+      {
+        "name": "tectonic",
+        "tools": [
+          "tectonic"
+        ]
+      }
+    ],
+    "latex-workshop.latex.tools": [
       {
         "name": "latexmk",
         "command": "latexmk",
@@ -53,6 +104,17 @@ git config --add oh-my-zsh.hide-dirty 1
           "-file-line-error",
           "--shell-escape",
           "-pdf",
+          "%DOC%"
+        ]
+      },
+      {
+        "name": "lualatex",
+        "command": "lualatex",
+        "args": [
+          "--synctex=1",
+          "--interaction=nonstopmode",
+          "--file-line-error",
+          "--pdf",
           "%DOC%"
         ]
       },
@@ -74,6 +136,13 @@ git config --add oh-my-zsh.hide-dirty 1
           "%DOCFILE%"
         ],
         "env": {}
+      },
+      {
+        "name": "biber",
+        "command": "biber",
+        "args": [
+          "%DOCFILE%"
+        ]
       }
     ],
     "workbench.editorAssociations": {
